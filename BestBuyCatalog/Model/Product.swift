@@ -36,18 +36,18 @@ extension Product: Decodable {
         let _imageURL = dictionary["image"] as? String
 
 
-        sku = _sku.intValue
-        productID = _productID.intValue
-        name = _name
-        regularPrice = _regularPrice.doubleValue
-        salePrice = _salePrice.doubleValue
-        onSale = _onSale
-        url = _url.flatMap(URL.init(string: ))
-        thumbnailImageURL = _thumbnailImageURL.flatMap(URL.init(string: ))
-        imageURL = _imageURL.flatMap(URL.init(string: ))
-        shortDescription = _shortDescription
-        longDescription = _longDescription
-        manufacturer = _manufacturer
+        sku                 = _sku.intValue
+        productID           = _productID.intValue
+        name                = _name
+        regularPrice        = _regularPrice.doubleValue
+        salePrice           = _salePrice.doubleValue
+        onSale              = _onSale
+        url                 = _url.flatMap(URL.init(string: ))
+        thumbnailImageURL   = _thumbnailImageURL.flatMap(URL.init(string: ))
+        imageURL            = _imageURL.flatMap(URL.init(string: ))
+        shortDescription    = _shortDescription
+        longDescription     = _longDescription
+        manufacturer        = _manufacturer
     }
 }
 
