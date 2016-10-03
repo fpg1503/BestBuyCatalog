@@ -50,3 +50,24 @@ extension Product: Decodable {
         manufacturer = _manufacturer
     }
 }
+
+extension Product: Hashable {
+    public var hashValue: Int {
+        return sku.hashValue
+    }
+}
+
+public func ==(lhs: Product, rhs: Product) -> Bool {
+    return  lhs.sku == rhs.sku &&
+            lhs.productID == rhs.productID &&
+            lhs.name == rhs.name &&
+            lhs.regularPrice == rhs.regularPrice &&
+            lhs.salePrice == rhs.salePrice &&
+            lhs.onSale == rhs.onSale &&
+            lhs.url == rhs.url &&
+            lhs.shortDescription == rhs.shortDescription &&
+            lhs.longDescription == rhs.longDescription &&
+            lhs.manufacturer == rhs.manufacturer &&
+            lhs.thumbnailImageURL == rhs.thumbnailImageURL &&
+            lhs.imageURL == rhs.imageURL
+}
