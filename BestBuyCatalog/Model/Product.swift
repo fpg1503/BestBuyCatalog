@@ -1,18 +1,52 @@
 import Foundation
 
-struct Product {
+public struct Product {
     let sku: Int
     let productID: Int
     let name: String
     let regularPrice: Double
     let salePrice: Double
     let onSale: Bool
-    let url: URL
+    let url: URL?
     let shortDescription: String
     let longDescription: String
     let manufacturer: String
 
     let thumbnailImageURL: URL?
-    let mediumImageURL: URL?
     let imageURL: URL?
+}
+
+extension Product: Decodable {
+    public init?(dictionary: [String : Any]) {
+        guard let _sku = dictionary["sku"] as? NSNumber,
+              let _productID = dictionary["productID"] as? NSNumber,
+              let _name = dictionary["name"] as? String,
+              let _regularPrice = dictionary["regularPrice"] as? NSNumber,
+              let _salePrice = dictionary["salePrice"] as? NSNumber,
+              let _onSale = dictionary["onSale"] as? Bool,
+              let _shortDescription = dictionary["shortDescription"] as? String,
+              let _longDescription = dictionary["longDescription"] as? String,
+              let _manufacturer = dictionary["manufacturer"] as? String else {
+                //TODO: Log precondition failure
+                return nil
+        }
+
+        let _url = dictionary["url"] as? String
+        let _thumbnailImageURL = dictionary["thumbnailImage"] as? String
+        let _imageURL = dictionary["image"] as? String
+
+
+        sku = _sku.intValue
+        productID = _productID.intValue
+        name = _name
+        regularPrice = _regularPrice.doubleValue
+        salePrice = _salePrice.doubleValue
+        onSale = _onSale
+        url = _url.flatMap(URL.init(string: ))
+        thumbnailImageURL = _thumbnailImageURL.flatMap(URL.init(string: ))
+        imageURL = _imageURL.flatMap(URL.init(string: ))
+        shortDescription = _shortDescription
+        longDescription = _longDescription
+        manufacturer = _manufacturer
+    }
 }
