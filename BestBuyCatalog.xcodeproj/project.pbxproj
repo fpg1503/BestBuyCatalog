@@ -15,6 +15,7 @@
 		A3938DED1DA30F3200529F2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3938DEC1DA30F3200529F2F /* Assets.xcassets */; };
 		A3938DF01DA30F3200529F2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3938DEE1DA30F3200529F2F /* LaunchScreen.storyboard */; };
 		A3938DFB1DA30F3200529F2F /* BestBuyCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938DFA1DA30F3200529F2F /* BestBuyCatalogTests.swift */; };
+		A3938E071DA3122F00529F2F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E061DA3122F00529F2F /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		A3938DF61DA30F3200529F2F /* BestBuyCatalogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestBuyCatalogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3938DFA1DA30F3200529F2F /* BestBuyCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestBuyCatalogTests.swift; sourceTree = "<group>"; };
 		A3938DFC1DA30F3200529F2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3938E061DA3122F00529F2F /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		A89C899C1D14A514AC60F1B3 /* Pods_BestBuyCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2874EA1A46360961A37FEA /* Pods-BestBuyCatalogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyCatalogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestBuyCatalogTests/Pods-BestBuyCatalogTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9078928105A81CF49B9F377 /* Pods-BestBuyCatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyCatalog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BestBuyCatalog/Pods-BestBuyCatalog.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		A3938DE41DA30F3200529F2F /* BestBuyCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				A3938E051DA3122300529F2F /* API */,
 				A3938DE51DA30F3200529F2F /* AppDelegate.swift */,
 				A3938DE71DA30F3200529F2F /* ViewController.swift */,
 				A3938DE91DA30F3200529F2F /* Main.storyboard */,
@@ -126,6 +129,14 @@
 				A3938DFC1DA30F3200529F2F /* Info.plist */,
 			);
 			path = BestBuyCatalogTests;
+			sourceTree = "<group>";
+		};
+		A3938E051DA3122300529F2F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A3938E061DA3122F00529F2F /* APIClient.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +343,7 @@
 			files = (
 				A3938DE81DA30F3200529F2F /* ViewController.swift in Sources */,
 				A3938DE61DA30F3200529F2F /* AppDelegate.swift in Sources */,
+				A3938E071DA3122F00529F2F /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
