@@ -1,0 +1,6 @@
+framework module Pods_BestBuyCatalogTests {
+  umbrella header "Pods-BestBuyCatalogTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
