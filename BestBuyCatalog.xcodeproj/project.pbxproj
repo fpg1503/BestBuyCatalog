@@ -17,6 +17,7 @@
 		A3938DFB1DA30F3200529F2F /* BestBuyCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938DFA1DA30F3200529F2F /* BestBuyCatalogTests.swift */; };
 		A3938E071DA3122F00529F2F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E061DA3122F00529F2F /* APIClient.swift */; };
 		A3938E0B1DA31BB600529F2F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E0A1DA31BB600529F2F /* Product.swift */; };
+		A3938E0D1DA31EA400529F2F /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E0C1DA31EA400529F2F /* Decodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		A3938DFC1DA30F3200529F2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3938E061DA3122F00529F2F /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		A3938E0A1DA31BB600529F2F /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		A3938E0C1DA31EA400529F2F /* Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
 		A89C899C1D14A514AC60F1B3 /* Pods_BestBuyCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2874EA1A46360961A37FEA /* Pods-BestBuyCatalogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyCatalogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestBuyCatalogTests/Pods-BestBuyCatalogTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9078928105A81CF49B9F377 /* Pods-BestBuyCatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyCatalog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BestBuyCatalog/Pods-BestBuyCatalog.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		A3938E091DA31BA000529F2F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A3938E0C1DA31EA400529F2F /* Decodable.swift */,
 				A3938E0A1DA31BB600529F2F /* Product.swift */,
 			);
 			path = Model;
@@ -355,6 +358,7 @@
 				A3938DE81DA30F3200529F2F /* ViewController.swift in Sources */,
 				A3938E0B1DA31BB600529F2F /* Product.swift in Sources */,
 				A3938DE61DA30F3200529F2F /* AppDelegate.swift in Sources */,
+				A3938E0D1DA31EA400529F2F /* Decodable.swift in Sources */,
 				A3938E071DA3122F00529F2F /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
