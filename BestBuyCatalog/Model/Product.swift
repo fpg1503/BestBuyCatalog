@@ -21,13 +21,14 @@ extension Product: Decodable {
               let _name = dictionary["name"] as? String,
               let _regularPrice = dictionary["regularPrice"] as? NSNumber,
               let _salePrice = dictionary["salePrice"] as? NSNumber,
-              let _onSale = dictionary["onSale"] as? Bool,
-              let _shortDescription = dictionary["shortDescription"] as? String,
-              let _longDescription = dictionary["longDescription"] as? String,
-              let _manufacturer = dictionary["manufacturer"] as? String else {
+              let _onSale = dictionary["onSale"] as? Bool else {
                 logFailedPrecondition("Product: Not all mandatory fields are present!")
                 return nil
         }
+
+        let _shortDescription = dictionary["shortDescription"] as? String ?? ""
+        let _longDescription = dictionary["longDescription"] as? String ?? ""
+        let _manufacturer = dictionary["manufacturer"] as? String ?? ""
 
         let _url = dictionary["url"] as? String
         let _thumbnailImageURL = dictionary["thumbnailImage"] as? String
