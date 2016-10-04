@@ -2,7 +2,6 @@ import Foundation
 
 public struct Product {
     let sku: Int
-    let productID: Int
     let name: String
     let regularPrice: Double
     let salePrice: Double
@@ -19,7 +18,6 @@ public struct Product {
 extension Product: Decodable {
     public init?(dictionary: [String : Any]) {
         guard let _sku = dictionary["sku"] as? NSNumber,
-              let _productID = dictionary["productID"] as? NSNumber,
               let _name = dictionary["name"] as? String,
               let _regularPrice = dictionary["regularPrice"] as? NSNumber,
               let _salePrice = dictionary["salePrice"] as? NSNumber,
@@ -37,7 +35,6 @@ extension Product: Decodable {
 
 
         sku                 = _sku.intValue
-        productID           = _productID.intValue
         name                = _name
         regularPrice        = _regularPrice.doubleValue
         salePrice           = _salePrice.doubleValue
@@ -59,7 +56,6 @@ extension Product: Hashable {
 
 public func ==(lhs: Product, rhs: Product) -> Bool {
     return  lhs.sku == rhs.sku &&
-            lhs.productID == rhs.productID &&
             lhs.name == rhs.name &&
             lhs.regularPrice == rhs.regularPrice &&
             lhs.salePrice == rhs.salePrice &&
