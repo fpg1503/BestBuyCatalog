@@ -27,7 +27,7 @@ extension Product: Decodable {
               let _shortDescription = dictionary["shortDescription"] as? String,
               let _longDescription = dictionary["longDescription"] as? String,
               let _manufacturer = dictionary["manufacturer"] as? String else {
-                //TODO: Log precondition failure
+                logFailedPrecondition("Product: Not all mandatory fields are present!")
                 return nil
         }
 
