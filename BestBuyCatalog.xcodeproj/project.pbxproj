@@ -18,6 +18,7 @@
 		A3938E071DA3122F00529F2F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E061DA3122F00529F2F /* APIClient.swift */; };
 		A3938E0B1DA31BB600529F2F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E0A1DA31BB600529F2F /* Product.swift */; };
 		A3938E0D1DA31EA400529F2F /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E0C1DA31EA400529F2F /* Decodable.swift */; };
+		A3938E111DA3283300529F2F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E101DA3283300529F2F /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		A3938E061DA3122F00529F2F /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		A3938E0A1DA31BB600529F2F /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		A3938E0C1DA31EA400529F2F /* Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
+		A3938E101DA3283300529F2F /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A89C899C1D14A514AC60F1B3 /* Pods_BestBuyCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2874EA1A46360961A37FEA /* Pods-BestBuyCatalogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyCatalogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestBuyCatalogTests/Pods-BestBuyCatalogTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9078928105A81CF49B9F377 /* Pods-BestBuyCatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyCatalog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BestBuyCatalog/Pods-BestBuyCatalog.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				A3938E051DA3122300529F2F /* API */,
 				A3938E091DA31BA000529F2F /* Model */,
+				A3938E0F1DA3282B00529F2F /* Extensions */,
 				A3938DE51DA30F3200529F2F /* AppDelegate.swift */,
 				A3938DE71DA30F3200529F2F /* ViewController.swift */,
 				A3938DE91DA30F3200529F2F /* Main.storyboard */,
@@ -151,6 +154,14 @@
 				A3938E0A1DA31BB600529F2F /* Product.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A3938E0F1DA3282B00529F2F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A3938E101DA3283300529F2F /* Logger.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3938DE81DA30F3200529F2F /* ViewController.swift in Sources */,
+				A3938E111DA3283300529F2F /* Logger.swift in Sources */,
 				A3938E0B1DA31BB600529F2F /* Product.swift in Sources */,
 				A3938DE61DA30F3200529F2F /* AppDelegate.swift in Sources */,
 				A3938E0D1DA31EA400529F2F /* Decodable.swift in Sources */,
