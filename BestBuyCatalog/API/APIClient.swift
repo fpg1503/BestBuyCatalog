@@ -9,7 +9,7 @@ struct APIClient {
     let key: String
     let baseURL = "https://api.bestbuy.com/v1/"
 
-    typealias ProductsCompletion = ([Product], Error?) -> Void
+    typealias ProductsCompletion = (([Product], Int)?, Error?) -> Void
     func getProducts(in category: String,
                      sortedBy sort: Sort = .salePriceDescending,
                      on page: Int = 1,
@@ -29,13 +29,14 @@ struct APIClient {
             .validate(statusCode: 200..<300)
             .responseJSON { response in
                 switch response.result {
-                case .success(let json):
-                    let value = json as? [String: Any] ?? [:]
-                    let dictionaries = value["products"] as? [[String: Any]] ?? []
+                case .success(let value):
+                    let json = value as? [String: Any] ?? [:]
+                    let totalPages = json["totalPages"] as? Int ?? 0
+                    let dictionaries = json["products"] as? [[String: Any]] ?? []
                     let products = dictionaries.flatMap(Product.init)
-                    completion(products, nil)
+                    completion((products, totalPages), nil)
                 case .failure(let error):
-                    completion([], error)
+                    completion(nil, error)
                 }
         }
     }
