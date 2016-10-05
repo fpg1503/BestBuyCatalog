@@ -13,6 +13,7 @@ struct APIClient {
     func getProducts(in category: String,
                      sortedBy sort: Sort = .salePriceDescending,
                      on page: Int = 1,
+                     pageSize: Int = 30,
                      completion: @escaping ProductsCompletion) {
 
         let searchString = "((categoryPath.id=\(category)))"
@@ -21,6 +22,7 @@ struct APIClient {
         let parameters = ["apiKey": key,
                           "format": "json",
                           "sort": sort.rawValue,
+                          "pageSize": pageSize,
                           "page": page] as [String : Any]
 
         Alamofire.request(endpoint, method: .get, parameters: parameters)
