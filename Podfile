@@ -6,6 +6,7 @@ target 'BestBuyCatalog' do
 
 	target 'BestBuyCatalogTests' do
 		inherit! :search_paths
+        pod 'Mockingjay', :git => 'https://github.com/kylef/Mockingjay'
 	end
 
     post_install do |installer|
