@@ -10,7 +10,6 @@
 		14EE07051BE40C8BCEE4C398 /* Pods_BestBuyCatalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89C899C1D14A514AC60F1B3 /* Pods_BestBuyCatalog.framework */; };
 		3CBDD470A4D5FFE796C8236C /* Pods_BestBuyCatalogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12927B35FC5720DA9BD95DA3 /* Pods_BestBuyCatalogTests.framework */; };
 		A3938DE61DA30F3200529F2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938DE51DA30F3200529F2F /* AppDelegate.swift */; };
-		A3938DE81DA30F3200529F2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938DE71DA30F3200529F2F /* ViewController.swift */; };
 		A3938DEB1DA30F3200529F2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3938DE91DA30F3200529F2F /* Main.storyboard */; };
 		A3938DED1DA30F3200529F2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3938DEC1DA30F3200529F2F /* Assets.xcassets */; };
 		A3938DF01DA30F3200529F2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3938DEE1DA30F3200529F2F /* LaunchScreen.storyboard */; };
@@ -21,6 +20,7 @@
 		A3938E111DA3283300529F2F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E101DA3283300529F2F /* Logger.swift */; };
 		A3938E131DA5B0B000529F2F /* ProductDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E121DA5B0B000529F2F /* ProductDecodingTests.swift */; };
 		A3938E151DA5B5AA00529F2F /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = A3938E141DA5B5AA00529F2F /* Products.json */; };
+		A3938E1B1DA5CB8C00529F2F /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E1A1DA5CB8C00529F2F /* ProductListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		6E818B4DFA9543B217D86B57 /* Pods-BestBuyCatalog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyCatalog.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestBuyCatalog/Pods-BestBuyCatalog.release.xcconfig"; sourceTree = "<group>"; };
 		A3938DE21DA30F3200529F2F /* BestBuyCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBuyCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3938DE51DA30F3200529F2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A3938DE71DA30F3200529F2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3938DEA1DA30F3200529F2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3938DEC1DA30F3200529F2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3938DEF1DA30F3200529F2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		A3938E101DA3283300529F2F /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A3938E121DA5B0B000529F2F /* ProductDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDecodingTests.swift; sourceTree = "<group>"; };
 		A3938E141DA5B5AA00529F2F /* Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
+		A3938E1A1DA5CB8C00529F2F /* ProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		A89C899C1D14A514AC60F1B3 /* Pods_BestBuyCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2874EA1A46360961A37FEA /* Pods-BestBuyCatalogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyCatalogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestBuyCatalogTests/Pods-BestBuyCatalogTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9078928105A81CF49B9F377 /* Pods-BestBuyCatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyCatalog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BestBuyCatalog/Pods-BestBuyCatalog.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,8 +124,8 @@
 				A3938E051DA3122300529F2F /* API */,
 				A3938E091DA31BA000529F2F /* Model */,
 				A3938E0F1DA3282B00529F2F /* Extensions */,
+				A3938E191DA5CB7E00529F2F /* Controller */,
 				A3938DE51DA30F3200529F2F /* AppDelegate.swift */,
-				A3938DE71DA30F3200529F2F /* ViewController.swift */,
 				A3938DE91DA30F3200529F2F /* Main.storyboard */,
 				A3938DEC1DA30F3200529F2F /* Assets.xcassets */,
 				A3938DEE1DA30F3200529F2F /* LaunchScreen.storyboard */,
@@ -168,6 +168,14 @@
 				A3938E101DA3283300529F2F /* Logger.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A3938E191DA5CB7E00529F2F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A3938E1A1DA5CB8C00529F2F /* ProductListViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,8 +381,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3938DE81DA30F3200529F2F /* ViewController.swift in Sources */,
 				A3938E111DA3283300529F2F /* Logger.swift in Sources */,
+				A3938E1B1DA5CB8C00529F2F /* ProductListViewController.swift in Sources */,
 				A3938E0B1DA31BB600529F2F /* Product.swift in Sources */,
 				A3938DE61DA30F3200529F2F /* AppDelegate.swift in Sources */,
 				A3938E0D1DA31EA400529F2F /* Decodable.swift in Sources */,
