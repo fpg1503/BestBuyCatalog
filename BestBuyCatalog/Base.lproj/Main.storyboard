@@ -30,7 +30,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Kvi-l1-2sM">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ProductCollectionViewCell" reuseIdentifier="ProductCollectionViewCell" id="Kvi-l1-2sM" customClass="ProductCollectionViewCell" customModule="BestBuyCatalog" customModuleProvider="target">
                                         <rect key="frame" x="88" y="0.0" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -49,33 +49,42 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ll2-sd-BfQ">
                                                             <frame key="frameInset" minX="3" minY="4" width="42" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyu-c3-tev">
-                                                    <frame key="frameInset" minX="79" minY="152" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyu-c3-tev">
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUd-KN-dew">
-                                                    <frame key="frameInset" minX="79" minY="175" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUd-KN-dew">
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="qyu-c3-tev" firstAttribute="top" secondItem="9Y7-kI-iFD" secondAttribute="bottom" constant="4" id="EuD-53-LK2"/>
+                                            <constraint firstItem="IUd-KN-dew" firstAttribute="top" secondItem="qyu-c3-tev" secondAttribute="bottom" constant="2" id="MNx-a8-jAT"/>
+                                            <constraint firstItem="qyu-c3-tev" firstAttribute="leading" secondItem="Kvi-l1-2sM" secondAttribute="leadingMargin" id="QMZ-kA-0XH"/>
+                                            <constraint firstItem="IUd-KN-dew" firstAttribute="leading" secondItem="Kvi-l1-2sM" secondAttribute="leadingMargin" id="bbP-Ih-RAc"/>
                                             <constraint firstItem="9Y7-kI-iFD" firstAttribute="top" secondItem="Kvi-l1-2sM" secondAttribute="topMargin" id="fYP-lY-cgD"/>
                                             <constraint firstItem="9Y7-kI-iFD" firstAttribute="centerX" secondItem="Kvi-l1-2sM" secondAttribute="centerX" id="h0J-xf-8Mc"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="IUd-KN-dew" secondAttribute="trailing" id="lMx-qI-tzz"/>
                                             <constraint firstItem="9Y7-kI-iFD" firstAttribute="width" secondItem="Kvi-l1-2sM" secondAttribute="width" multiplier="0.7" id="wo1-Bd-7eO"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="qyu-c3-tev" secondAttribute="trailing" id="zTH-wx-sxc"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="discountLabel" destination="Ll2-sd-BfQ" id="Emk-Bp-4y1"/>
+                                            <outlet property="discountLabelContainer" destination="vMm-Vt-UIc" id="8AO-aE-BeC"/>
+                                            <outlet property="productImageView" destination="9Y7-kI-iFD" id="Skx-bu-qTw"/>
+                                            <outlet property="productNameLabel" destination="qyu-c3-tev" id="svQ-Bq-E6r"/>
+                                            <outlet property="productPriceLabel" destination="IUd-KN-dew" id="Nxo-bz-TBL"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
