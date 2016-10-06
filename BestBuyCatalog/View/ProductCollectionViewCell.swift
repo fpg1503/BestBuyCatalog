@@ -20,7 +20,7 @@ public final class ProductCollectionViewCell: UICollectionViewCell {
         productNameLabel?.text = productViewModel.name
         productPriceLabel?.text = productViewModel.formattedPrice
 
-        //TODO: Accessibility!
+        inferAccessibilityLabel(from: productViewModel.accessibilityLabel)
     }
 }
 
