@@ -22,6 +22,11 @@ public final class ProductCollectionViewCell: UICollectionViewCell {
 
         inferAccessibilityLabel(from: productViewModel.accessibilityLabel)
     }
+
+
+    public override func prepareForReuse() {
+        productImageView?.af_cancelImageRequest()
+    }
 }
 
 extension ProductCollectionViewCell: ProductViewModelConfigurable { }
