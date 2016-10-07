@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Product List View Controller-->
+        <!--Cameras-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ProductListViewController" customModule="BestBuyCatalog" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,11 +27,11 @@
                                     <size key="itemSize" width="200" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ProductCollectionViewCell" reuseIdentifier="ProductCollectionViewCell" id="Kvi-l1-2sM" customClass="ProductCollectionViewCell" customModule="BestBuyCatalog" customModuleProvider="target">
-                                        <rect key="frame" x="88" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="88" y="5" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -45,7 +45,7 @@
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMm-Vt-UIc">
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ll2-sd-BfQ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ll2-sd-BfQ">
                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -102,12 +102,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="f8a-wK-iC0" secondAttribute="trailing" id="9iv-8v-Xzu"/>
-                            <constraint firstItem="f8a-wK-iC0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="UZf-5z-krk"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f8a-wK-iC0" secondAttribute="bottom" id="bi0-0Y-GAi"/>
                             <constraint firstItem="f8a-wK-iC0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nlk-hk-ojt"/>
+                            <constraint firstItem="f8a-wK-iC0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tea-9h-v0D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pwn-sQ-cuf"/>
+                    <navigationItem key="navigationItem" title="Cameras" id="pwn-sQ-cuf"/>
                     <connections>
                         <outlet property="collectionView" destination="f8a-wK-iC0" id="LeW-ef-iuh"/>
                     </connections>
