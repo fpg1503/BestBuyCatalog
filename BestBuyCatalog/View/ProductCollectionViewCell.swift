@@ -8,6 +8,21 @@ public final class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var productNameLabel: UILabel?
     @IBOutlet private var productPriceLabel: UILabel?
 
+    @IBOutlet private var highlightView: UIView?
+    override public var isHighlighted: Bool {
+        didSet {
+            guard let highlightView = highlightView else {
+                logFailedPrecondition("No highlight view")
+                return
+            }
+
+            let highlightedColor   = UIColor.lightGray.withAlphaComponent(0.3)
+            let unhighlightedColor = UIColor.clear
+
+            highlightView.backgroundColor = isHighlighted ? highlightedColor : unhighlightedColor
+        }
+    }
+
     func configure(with productViewModel: ProductViewModel) {
         if let image = productViewModel.thumbnailImageURL {
             productImageView?.af_setImage(withURL: image)
