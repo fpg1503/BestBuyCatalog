@@ -23,7 +23,9 @@ extension Product: ProductViewModel {
         let discount = regularPrice - salePrice
         let discountPercentage = (discount/regularPrice) * 100
 
-        return String(format: "%2f%%", discountPercentage)
+        let lowDiscount = discountPercentage < 10
+        let formattedPercentage = String(format: "%d%% OFF!", Int(discountPercentage))
+        return lowDiscount ? "Sale!" : formattedPercentage
     }
 
     var formattedPrice: String {
