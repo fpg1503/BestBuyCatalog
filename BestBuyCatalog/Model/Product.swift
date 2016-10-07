@@ -10,8 +10,6 @@ public struct Product {
     let shortDescription: String
     let longDescription: String
     let manufacturer: String
-
-    let thumbnailImageURL: URL?
     let imageURL: URL?
 }
 
@@ -31,7 +29,6 @@ extension Product: Decodable {
         let _manufacturer = dictionary["manufacturer"] as? String ?? ""
 
         let _url = dictionary["url"] as? String
-        let _thumbnailImageURL = dictionary["thumbnailImage"] as? String
         let _imageURL = dictionary["image"] as? String
 
 
@@ -41,7 +38,6 @@ extension Product: Decodable {
         salePrice           = _salePrice.doubleValue
         onSale              = _onSale
         url                 = _url.flatMap(URL.init(string: ))
-        thumbnailImageURL   = _thumbnailImageURL.flatMap(URL.init(string: ))
         imageURL            = _imageURL.flatMap(URL.init(string: ))
         shortDescription    = _shortDescription
         longDescription     = _longDescription
@@ -65,6 +61,5 @@ public func ==(lhs: Product, rhs: Product) -> Bool {
             lhs.shortDescription == rhs.shortDescription &&
             lhs.longDescription == rhs.longDescription &&
             lhs.manufacturer == rhs.manufacturer &&
-            lhs.thumbnailImageURL == rhs.thumbnailImageURL &&
             lhs.imageURL == rhs.imageURL
 }

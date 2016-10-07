@@ -15,6 +15,10 @@ protocol ProductViewModel {
 }
 
 extension Product: ProductViewModel {
+    var thumbnailImageURL: URL? {
+        return imageURL
+    }
+
     var formattedDiscount: String {
         let discount = regularPrice - salePrice
         let discountPercentage = (discount/regularPrice) * 100
