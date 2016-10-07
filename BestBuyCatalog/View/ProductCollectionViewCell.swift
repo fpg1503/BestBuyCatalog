@@ -24,4 +24,4 @@ public final class ProductCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension ProductViewModelConfigurable { }
+extension ProductCollectionViewCell: ProductViewModelConfigurable { }

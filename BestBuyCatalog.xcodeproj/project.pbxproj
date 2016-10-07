@@ -26,6 +26,7 @@
 		A3938E241DA706D500529F2F /* NumberFormatter+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E231DA706D500529F2F /* NumberFormatter+Currency.swift */; };
 		A3938E261DA70DE400529F2F /* UIAccessibility+Inferred.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E251DA70DE400529F2F /* UIAccessibility+Inferred.swift */; };
 		A3938E281DA71E5000529F2F /* Array+SafeAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E271DA71E5000529F2F /* Array+SafeAccess.swift */; };
+		A3938E2A1DA7233700529F2F /* APIClient+Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E291DA7233700529F2F /* APIClient+Credentials.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		A3938E231DA706D500529F2F /* NumberFormatter+Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Currency.swift"; sourceTree = "<group>"; };
 		A3938E251DA70DE400529F2F /* UIAccessibility+Inferred.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAccessibility+Inferred.swift"; sourceTree = "<group>"; };
 		A3938E271DA71E5000529F2F /* Array+SafeAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+SafeAccess.swift"; sourceTree = "<group>"; };
+		A3938E291DA7233700529F2F /* APIClient+Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIClient+Credentials.swift"; sourceTree = "<group>"; };
 		A89C899C1D14A514AC60F1B3 /* Pods_BestBuyCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2874EA1A46360961A37FEA /* Pods-BestBuyCatalogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyCatalogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestBuyCatalogTests/Pods-BestBuyCatalogTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9078928105A81CF49B9F377 /* Pods-BestBuyCatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyCatalog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BestBuyCatalog/Pods-BestBuyCatalog.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				A3938E061DA3122F00529F2F /* APIClient.swift */,
+				A3938E291DA7233700529F2F /* APIClient+Credentials.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				A3938E111DA3283300529F2F /* Logger.swift in Sources */,
 				A3938E1B1DA5CB8C00529F2F /* ProductListViewController.swift in Sources */,
 				A3938E261DA70DE400529F2F /* UIAccessibility+Inferred.swift in Sources */,
+				A3938E2A1DA7233700529F2F /* APIClient+Credentials.swift in Sources */,
 				A3938E1F1DA6E2C600529F2F /* ProductCollectionViewCell.swift in Sources */,
 				A3938E0B1DA31BB600529F2F /* Product.swift in Sources */,
 				A3938DE61DA30F3200529F2F /* AppDelegate.swift in Sources */,
