@@ -63,7 +63,7 @@ extension ProductListViewController: UICollectionViewDataSource {
     }
 }
 
-extension ProductListViewController: UICollectionViewDelegate {
+extension ProductListViewController: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
@@ -71,5 +71,22 @@ extension ProductListViewController: UICollectionViewDelegate {
             oldProductsCount = products.count
             loadMoreProducts()
         }
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let width = collectionView.bounds.size.width
+
+        let columns: CGFloat = width > 414 ? 3 : 2
+
+        let side = width / columns
+
+        return CGSize(width: side, height: side)
+    }
+}
+
+extension ProductListViewController {
+    public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView?.collectionViewLayout.invalidateLayout()
     }
 }
