@@ -7,12 +7,15 @@ public final class ProductListViewController: UIViewController {
     private let client = APIClient()
     private let category = "abcat0401000"
 
-    private var currentPage = 1
+    private var currentPage = 0
     private var totalPages = 1
 
-    private func loadMoreProducts() {
-        guard currentPage <= totalPages else { return }
+    var oldProductsCount = 0
 
+    func loadMoreProducts() {
+        guard currentPage + 1 <= totalPages else { return }
+
+        currentPage += 1
         client.getProducts(in: category, on: currentPage, completion: didLoadProducts)
     }
 
@@ -57,5 +60,16 @@ extension ProductListViewController: UICollectionViewDataSource {
         configurable.configure(with: product)
 
         return cell
+    }
+}
+
+extension ProductListViewController: UICollectionViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        if indexPath.item == products.count - 1 && products.count > oldProductsCount {
+            oldProductsCount = products.count
+            loadMoreProducts()
+        }
     }
 }

@@ -24,10 +24,12 @@ public final class ProductCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(with productViewModel: ProductViewModel) {
+        productImageView?.image = nil
+
         if let image = productViewModel.thumbnailImageURL {
             productImageView?.af_setImage(withURL: image)
         } else {
-            logFailedPrecondition("Product has no image")
+            productImageView?.image = UIImage(named: "no-image")
         }
 
         discountLabelContainer?.isHidden = !productViewModel.onSale

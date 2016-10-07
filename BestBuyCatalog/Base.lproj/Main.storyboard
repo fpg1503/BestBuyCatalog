@@ -112,6 +112,7 @@
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="jkn-yr-aLe"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Qwu-Rz-wfn"/>
                                 </connections>
                             </collectionView>
                         </subviews>
