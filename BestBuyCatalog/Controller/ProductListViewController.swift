@@ -25,7 +25,11 @@ public final class ProductListViewController: UIViewController {
 
     private func didLoadProducts(success: ([Product], Int)?, failure: Error?) {
         guard let (receivedProducts, receivedTotalPages) = success else {
-            //TODO: Alert for error!
+            guard let error = failure else {
+                logFailedPrecondition("Success and failure are nil")
+                return
+            }
+            alert(for: error)
             return
         }
 
