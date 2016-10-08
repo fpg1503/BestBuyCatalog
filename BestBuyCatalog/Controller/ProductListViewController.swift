@@ -25,7 +25,7 @@ public final class ProductListViewController: UIViewController {
         }
     }
 
-    typealias ProductsCompletion = (([Product], Int)?, Error?) -> Void
+    typealias ProductsCompletion = (Response<Product>?, Error?) -> Void
     func loadMoreProducts(page: Int? = nil, completion: ProductsCompletion? = nil) {
         let pageToFetch = page ?? nextPage
         guard nextPage <= totalPages else { return }
@@ -41,8 +41,8 @@ public final class ProductListViewController: UIViewController {
         client.getProducts(in: category, completion: didLoadProducts)
     }
 
-    private func didLoadProducts(success: ([Product], Int)?, failure: Error?) {
-        guard let (receivedProducts, receivedTotalPages) = success else {
+    private func didLoadProducts(success: Response<Product>?, failure: Error?) {
+        guard let response = success else {
             guard let error = failure else {
                 logFailedPrecondition("Success and failure are nil")
                 return
@@ -51,9 +51,9 @@ public final class ProductListViewController: UIViewController {
             return
         }
 
-        products += receivedProducts
-        totalPages = receivedTotalPages
-        nextPage += 1
+        products += response.items
+        totalPages = response.totalPages
+        nextPage = response.currentPage + 1
 
         collectionView?.reloadData()
     }
