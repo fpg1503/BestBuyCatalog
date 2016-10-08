@@ -31,8 +31,7 @@ struct APIClient {
                 switch response.result {
                 case .success(let value):
                     let json = value as? [String: Any] ?? [:]
-                    let totalPages = json["totalPages"] as? Int ?? 0
-                    let dictionaries = json["products"] as? [[String: Any]] ?? []
+                    let dictionaries = json[Product.arrayKey] as? [[String: Any]] ?? []
                     let products = dictionaries.flatMap(Product.init)
                     completion((products, totalPages), nil)
                 case .failure(let error):
