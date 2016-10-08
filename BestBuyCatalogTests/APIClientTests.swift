@@ -18,10 +18,9 @@ class APIClientTests: XCTestCase {
 
         client.getProducts(in: "") { (response, error) in
             XCTAssertNotNil(response)
-            let (products, pages) = response!
             XCTAssertNil(error)
-            XCTAssertEqual(products.count, 100)
-            XCTAssertEqual(pages, 4)
+            XCTAssertEqual(response?.items.count, 100)
+            XCTAssertEqual(response?.totalPages, 4)
             testExpectation.fulfill()
         }
 
