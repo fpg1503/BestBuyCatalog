@@ -13,7 +13,7 @@ public struct Product {
     let imageURL: URL?
 }
 
-extension Product: Decodable {
+extension Product: InnerDecodable {
     public init?(dictionary: [String : Any]) {
         guard let _sku = dictionary["sku"] as? NSNumber,
               let _name = dictionary["name"] as? String,
@@ -43,6 +43,8 @@ extension Product: Decodable {
         longDescription     = _longDescription
         manufacturer        = _manufacturer
     }
+
+    public static var arrayKey: String { return "products" }
 }
 
 extension Product: Hashable {
