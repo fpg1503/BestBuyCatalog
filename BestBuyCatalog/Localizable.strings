@@ -1,0 +1,6 @@
+"Alert.Title.Error" = "Error";
+"Alert.Message.Unexpected" = "Something unexpected happened, try again later.";
+"Alert.Ok" = "Ok";
+"ProductCell.Sale" = "Sale!";
+"ProductCell.Discount" = "From %@ to: %@";
+"ProductCell.Accessibility.OnSale" = " On sale: ";

@@ -34,14 +34,14 @@ extension Product: ProductViewModel {
         let formattedSalePrice = formatter.string(from: NSNumber(value: salePrice)) ?? ""
 
         if onSale && salePrice < regularPrice {
-            return "De " + formattedRegularPrice + " por: " + formattedSalePrice
+            return String(format: "ProductCell.Discount".localized, formattedRegularPrice, formattedSalePrice)
         } else {
             return formattedSalePrice
         }
     }
 
     var accessibilityLabel: String {
-        let sale = onSale ? " Em promoção: " : " "
+        let sale = onSale ? "ProductCell.Accessibility.OnSale".localized : " "
         return name + sale + formattedPrice
     }
 }
