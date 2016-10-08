@@ -7,19 +7,37 @@ public final class ProductListViewController: UIViewController {
     private let client = APIClient()
     private let category = "abcat0401000"
 
-    private var currentPage = 0
+    private var nextPage = 1
     private var totalPages = 1
 
     var oldProductsCount = 0
 
-    func loadMoreProducts() {
-        guard currentPage + 1 <= totalPages else { return }
+    let refreshControl = UIRefreshControl()
 
-        currentPage += 1
-        client.getProducts(in: category, on: currentPage, completion: didLoadProducts)
+    func cleanAndReload() {
+        loadMoreProducts(page: 1) { (success, _) in
+            self.refreshControl.endRefreshing()
+            if success != nil {
+                self.nextPage = 1
+                self.oldProductsCount = 0
+                self.products = []
+            }
+        }
+    }
+
+    typealias ProductsCompletion = (([Product], Int)?, Error?) -> Void
+    func loadMoreProducts(page: Int? = nil, completion: ProductsCompletion? = nil) {
+        let pageToFetch = page ?? nextPage
+        guard nextPage <= totalPages else { return }
+
+        client.getProducts(in: category, on: pageToFetch) { (success, failure) in
+            completion?(success, failure)
+            self.didLoadProducts(success: success, failure: failure)
+        }
     }
 
     public override func viewDidLoad() {
+        addRefreshControl()
         client.getProducts(in: category, completion: didLoadProducts)
     }
 
@@ -35,10 +53,13 @@ public final class ProductListViewController: UIViewController {
 
         products += receivedProducts
         totalPages = receivedTotalPages
+        nextPage += 1
 
         collectionView?.reloadData()
     }
 }
+
+//MARK: - UICollectionViewDataSource
 
 extension ProductListViewController: UICollectionViewDataSource {
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -67,6 +88,8 @@ extension ProductListViewController: UICollectionViewDataSource {
     }
 }
 
+//MARK: - UICollectionViewDelegateFlowLayout
+
 extension ProductListViewController: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
@@ -89,8 +112,23 @@ extension ProductListViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//MARK: - Layout Transition
+
 extension ProductListViewController {
     public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionView?.collectionViewLayout.invalidateLayout()
+    }
+}
+
+//MARK: - Pull to Refresh
+extension ProductListViewController {
+    func addRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(ProductListViewController.pullToRefresh),
+                                 for: .valueChanged)
+        collectionView?.addSubview(refreshControl)
+    }
+
+    @objc func pullToRefresh() {
+        cleanAndReload()
     }
 }
