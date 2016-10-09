@@ -3,6 +3,7 @@ target 'BestBuyCatalog' do
 
   	pod 'Alamofire', '~> 4.0'
 	pod 'AlamofireImage', '~> 3.1'
+    pod 'JTSImageViewController', '~> 1.5'
 
 	target 'BestBuyCatalogTests' do
 		inherit! :search_paths
