@@ -18,7 +18,10 @@ struct APIClient {
                      completion: @escaping ProductsCompletion) {
 
 
-        let clearSearch = searchText?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let disallowed = CharacterSet.alphanumerics.inverted
+        let clearSearch = searchText?.components(separatedBy: disallowed)
+                                     .joined(separator: "")
+                                     .trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         let shouldSearch = !clearSearch.isEmpty
 
         let search = shouldSearch ? "(search=\(clearSearch))&" : ""
