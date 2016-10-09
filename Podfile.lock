@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.0.1)
   - AlamofireImage (3.1.0):
     - Alamofire (~> 4.0)
+  - JTSImageViewController (1.5.1)
   - Mockingjay (1.3.0):
     - Mockingjay/Core (= 1.3.0)
     - Mockingjay/XCTest (= 1.3.0)
@@ -14,6 +15,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireImage (~> 3.1)
+  - JTSImageViewController (~> 1.5)
   - Mockingjay (from `https://github.com/kylef/Mockingjay`)
 
 EXTERNAL SOURCES:
@@ -28,9 +30,10 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   AlamofireImage: bb8c8351c51cb1633bb6be69b6dbbaff37ce65b7
+  JTSImageViewController: 1f8ce1cc93dab0d0af8e53badeea7528560cfec9
   Mockingjay: 31208eb6cb4d20324cc845c0ca2837232d48038b
   URITemplate: a5acb3f76c6a2338116fde88b658d83f91bbac45
 
-PODFILE CHECKSUM: 3204fd124ea9b4cb19de254ed2c8d2c3a147b248
+PODFILE CHECKSUM: de0cffd29331b9a0daf1a4d803b985486385f845
 
 COCOAPODS: 1.0.1
