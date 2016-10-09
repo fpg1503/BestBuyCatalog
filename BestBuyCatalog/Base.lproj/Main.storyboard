@@ -135,11 +135,87 @@
                     <navigationItem key="navigationItem" title="Cameras" id="pwn-sQ-cuf"/>
                     <connections>
                         <outlet property="collectionView" destination="f8a-wK-iC0" id="LeW-ef-iuh"/>
+                        <segue destination="iKb-NA-MpX" kind="show" identifier="ProductDetailsViewController" id="gJa-sW-N8v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="84.107946026986511"/>
+            <point key="canvasLocation" x="956" y="83"/>
+        </scene>
+        <!--Product Details View Controller-->
+        <scene sceneID="0bI-16-Es4">
+            <objects>
+                <viewController id="iKb-NA-MpX" customClass="ProductDetailsViewController" customModule="BestBuyCatalog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iDg-N1-TiL"/>
+                        <viewControllerLayoutGuide type="bottom" id="7bw-mz-gxP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1IF-Qj-zAf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBi-P0-1dp">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oAT-ia-fcK">
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="oAT-ia-fcK" secondAttribute="height" id="CvF-EE-16T"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YX-nf-2VG">
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByE-Bz-CGS">
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0EV-jS-kJY">
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7YX-nf-2VG" firstAttribute="top" secondItem="oAT-ia-fcK" secondAttribute="bottom" constant="43" id="DRZ-NN-ZDq"/>
+                                    <constraint firstAttribute="bottom" secondItem="0EV-jS-kJY" secondAttribute="bottom" constant="25" id="IGX-t4-grC"/>
+                                    <constraint firstItem="oAT-ia-fcK" firstAttribute="leading" secondItem="NBi-P0-1dp" secondAttribute="leading" priority="250" constant="16" id="Lvo-TX-bHw"/>
+                                    <constraint firstItem="oAT-ia-fcK" firstAttribute="top" secondItem="NBi-P0-1dp" secondAttribute="top" id="Rhq-Qe-Ufz"/>
+                                    <constraint firstAttribute="trailing" secondItem="oAT-ia-fcK" secondAttribute="trailing" priority="250" constant="16" id="jcB-CN-vIW"/>
+                                    <constraint firstItem="0EV-jS-kJY" firstAttribute="top" secondItem="ByE-Bz-CGS" secondAttribute="bottom" constant="25" id="tfp-zE-sfP"/>
+                                    <constraint firstItem="ByE-Bz-CGS" firstAttribute="top" secondItem="7YX-nf-2VG" secondAttribute="bottom" constant="25" id="vcP-SQ-dro"/>
+                                </constraints>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="64" maxX="0.0" maxY="0.0"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ByE-Bz-CGS" firstAttribute="leading" secondItem="1IF-Qj-zAf" secondAttribute="leadingMargin" id="2jg-nT-Bki"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ByE-Bz-CGS" secondAttribute="trailing" id="7HE-z5-Je0"/>
+                            <constraint firstItem="NBi-P0-1dp" firstAttribute="centerX" secondItem="1IF-Qj-zAf" secondAttribute="centerX" id="BjY-Zh-KpK"/>
+                            <constraint firstItem="NBi-P0-1dp" firstAttribute="top" secondItem="1IF-Qj-zAf" secondAttribute="top" id="DQ4-TG-rra"/>
+                            <constraint firstItem="oAT-ia-fcK" firstAttribute="leading" secondItem="1IF-Qj-zAf" secondAttribute="leadingMargin" id="HkL-TS-xHp"/>
+                            <constraint firstItem="NBi-P0-1dp" firstAttribute="width" secondItem="1IF-Qj-zAf" secondAttribute="width" id="JqB-CT-Kak"/>
+                            <constraint firstItem="7YX-nf-2VG" firstAttribute="leading" secondItem="1IF-Qj-zAf" secondAttribute="leadingMargin" id="UT5-bj-KDy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0EV-jS-kJY" secondAttribute="trailing" id="WsB-8d-iS9"/>
+                            <constraint firstItem="7bw-mz-gxP" firstAttribute="top" secondItem="NBi-P0-1dp" secondAttribute="bottom" id="Z4W-rp-tkH"/>
+                            <constraint firstItem="0EV-jS-kJY" firstAttribute="leading" secondItem="1IF-Qj-zAf" secondAttribute="leadingMargin" id="bPS-be-dno"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oAT-ia-fcK" secondAttribute="trailing" id="p49-I8-TDX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7YX-nf-2VG" secondAttribute="trailing" id="yDO-tD-zAv"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="imageView" destination="oAT-ia-fcK" id="XWm-Lk-4Dw"/>
+                        <outlet property="priceLabel" destination="0EV-jS-kJY" id="zHu-ek-frS"/>
+                        <outlet property="productDescriptionLabel" destination="ByE-Bz-CGS" id="gqh-Xb-Loa"/>
+                        <outlet property="productNameLabel" destination="7YX-nf-2VG" id="nfx-qU-Itm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M52-Rd-g4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1932" y="83.208395802098963"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SpC-Ye-EhS">

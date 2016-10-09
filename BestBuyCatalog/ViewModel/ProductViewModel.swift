@@ -4,6 +4,10 @@ protocol ProductViewModelConfigurable {
     func configure(with productViewModel: ProductViewModel)
 }
 
+protocol ProductInjectable {
+    func inject(product: Product)
+}
+
 protocol ProductViewModel {
     var onSale: Bool { get }
     var formattedDiscount: String { get }
@@ -43,5 +47,12 @@ extension Product: ProductViewModel {
     var accessibilityLabel: String {
         let sale = onSale ? "ProductCell.Accessibility.OnSale".localized : " "
         return name + sale + formattedPrice
+    }
+
+    var description: String {
+        if !longDescription.isEmpty {
+            return longDescription
+        }
+        return shortDescription
     }
 }
