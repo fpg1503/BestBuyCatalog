@@ -123,13 +123,37 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Qwu-Rz-wfn"/>
                                 </connections>
                             </collectionView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9o-vY-G5h">
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FEE-5W-yh6">
+                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No products matching the selected criteira" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo1-ie-KJl">
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94428645902209807" green="0.94680924548043144" blue="0.94401519166098702" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bo1-ie-KJl" firstAttribute="width" relation="lessThanOrEqual" secondItem="T9o-vY-G5h" secondAttribute="width" constant="-20" id="AQm-j3-FAH"/>
+                                    <constraint firstItem="FEE-5W-yh6" firstAttribute="centerY" secondItem="T9o-vY-G5h" secondAttribute="centerY" id="O8a-XK-oZO"/>
+                                    <constraint firstItem="FEE-5W-yh6" firstAttribute="top" secondItem="bo1-ie-KJl" secondAttribute="bottom" constant="49" id="VHV-2u-UDJ"/>
+                                    <constraint firstItem="bo1-ie-KJl" firstAttribute="centerX" secondItem="T9o-vY-G5h" secondAttribute="centerX" id="dP5-dm-fQ1"/>
+                                    <constraint firstItem="FEE-5W-yh6" firstAttribute="centerX" secondItem="T9o-vY-G5h" secondAttribute="centerX" id="tPX-FB-Phs"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="T9o-vY-G5h" secondAttribute="bottom" id="1Zt-xY-TyO"/>
                             <constraint firstAttribute="trailing" secondItem="f8a-wK-iC0" secondAttribute="trailing" id="9iv-8v-Xzu"/>
+                            <constraint firstItem="T9o-vY-G5h" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="64" id="XT0-XE-ACz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f8a-wK-iC0" secondAttribute="bottom" id="bi0-0Y-GAi"/>
+                            <constraint firstAttribute="trailing" secondItem="T9o-vY-G5h" secondAttribute="trailing" id="llM-xh-TEl"/>
                             <constraint firstItem="f8a-wK-iC0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nlk-hk-ojt"/>
                             <constraint firstItem="f8a-wK-iC0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tea-9h-v0D"/>
+                            <constraint firstItem="T9o-vY-G5h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yfm-vP-yQc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cameras" id="pwn-sQ-cuf">
@@ -147,13 +171,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="FEE-5W-yh6" id="arU-kg-YZk"/>
                         <outlet property="collectionView" destination="f8a-wK-iC0" id="LeW-ef-iuh"/>
+                        <outlet property="emptyStateContainer" destination="T9o-vY-G5h" id="Y95-hC-h7u"/>
+                        <outlet property="emptyStateLabel" destination="bo1-ie-KJl" id="Xjv-3K-VHn"/>
                         <segue destination="iKb-NA-MpX" kind="show" identifier="ProductDetailsViewController" id="gJa-sW-N8v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="83"/>
+            <point key="canvasLocation" x="956" y="82.3088455772114"/>
         </scene>
         <!--Product Details View Controller-->
         <scene sceneID="0bI-16-Es4">

@@ -2,6 +2,11 @@ import UIKit
 
 public final class ProductListViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView?
+
+    @IBOutlet var activityIndicator: UIActivityIndicatorView?
+    @IBOutlet var emptyStateContainer: UIView?
+    @IBOutlet var emptyStateLabel: UILabel?
+
     var products: [Product] = []
 
     private let client = APIClient()
@@ -31,6 +36,12 @@ public final class ProductListViewController: UIViewController {
 
     var searchController: UISearchController?
 
+    var state: State = .loading {
+        didSet {
+            setState(state: state)
+        }
+    }
+
     var isSearching: Bool = false {
         didSet {
             if !isSearching {
@@ -46,15 +57,17 @@ public final class ProductListViewController: UIViewController {
             oldProductsCount = 0
             totalPages = 1
             products = []
+            state = .loading
             collectionView?.reloadData()
         }
 
         loadMoreProducts(page: 1) { (success, _) in
             self.refreshControl.endRefreshing()
-            if success != nil {
+            if let success = success {
                 self.nextPage = 1
                 self.oldProductsCount = 0
                 self.products = []
+                self.state = success.items.isEmpty ? .empty : .result
             }
         }
     }
