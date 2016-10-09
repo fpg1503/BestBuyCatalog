@@ -6,6 +6,9 @@ public final class ProductDetailsViewController: UIViewController, ProductInject
     @IBOutlet private var productDescriptionLabel: UILabel?
     @IBOutlet private var priceLabel: UILabel?
 
+    var name: String?
+    var shareURL: URL?
+
     private var product: Product? {
         didSet {
             if let product = product, product != oldValue {
@@ -21,6 +24,7 @@ public final class ProductDetailsViewController: UIViewController, ProductInject
     public override func viewDidLoad() {
         super.viewDidLoad()
         loadProduct()
+        addShareButton()
     }
 
     private func loadProduct() {
@@ -36,5 +40,8 @@ public final class ProductDetailsViewController: UIViewController, ProductInject
         productDescriptionLabel?.text = product.description
         priceLabel?.text = product.formattedPrice
         navigationItem.title = product.manufacturer
+
+        name = product.name
+        shareURL = product.url
     }
 }
