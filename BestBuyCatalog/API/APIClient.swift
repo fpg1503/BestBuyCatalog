@@ -13,10 +13,21 @@ struct APIClient {
     func getProducts(in category: String,
                      sortedBy sort: Sort = .salePriceDescending,
                      on page: Int = 1,
-                     pageSize: Int = 30,
+                     pageSize: Int = 10,
+                     searchText: String? = nil,
                      completion: @escaping ProductsCompletion) {
 
-        let searchString = "((categoryPath.id=\(category)))"
+
+        let disallowed = CharacterSet.alphanumerics.union([" "]).inverted
+        let clearSearch = searchText?.components(separatedBy: disallowed)
+                                     .joined(separator: "")
+                                     .trimmingCharacters(in: .whitespacesAndNewlines)
+                                     .addingPercentEncoding(withAllowedCharacters: .alphanumerics) ?? ""
+        let shouldSearch = !clearSearch.isEmpty
+
+        let search = shouldSearch ? "(search=\(clearSearch))&" : ""
+        let category = "(categoryPath.id=\(category))"
+        let searchString = "(\(search)\(category))"
         let endpoint = baseURL + "products" + searchString
 
         let parameters = ["apiKey": key,

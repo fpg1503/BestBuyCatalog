@@ -12,7 +12,7 @@
         <!--Cameras-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ProductListViewController" customModule="BestBuyCatalog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ProductListViewController" customModule="BestBuyCatalog" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -132,7 +132,20 @@
                             <constraint firstItem="f8a-wK-iC0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tea-9h-v0D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Cameras" id="pwn-sQ-cuf"/>
+                    <navigationItem key="navigationItem" title="Cameras" id="pwn-sQ-cuf">
+                        <barButtonItem key="leftBarButtonItem" image="sort" id="Cex-dS-GHo">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="showSortSelector" destination="BYZ-38-t0r" id="o3P-AR-tfe"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="PzU-81-Kff">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="showSearchBar" destination="BYZ-38-t0r" id="7jl-7y-Zp4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="f8a-wK-iC0" id="LeW-ef-iuh"/>
                         <segue destination="iKb-NA-MpX" kind="show" identifier="ProductDetailsViewController" id="gJa-sW-N8v"/>
@@ -236,4 +249,7 @@
             <point key="canvasLocation" x="57" y="84"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sort" width="25" height="25"/>
+    </resources>
 </document>

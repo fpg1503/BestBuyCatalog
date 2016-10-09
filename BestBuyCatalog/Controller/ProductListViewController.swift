@@ -11,12 +11,44 @@ public final class ProductListViewController: UIViewController {
     private var totalPages = 1
 
     var oldProductsCount = 0
+    var sort: Sort = .salePriceDescending {
+        didSet {
+            let isNewValue = sort != oldValue
+            cleanAndReload(destructive: isNewValue)
+        }
+    }
+
+    var searchText: String? {
+        didSet {
+            let isNewValue = searchText != oldValue
+            cleanAndReload(destructive: isNewValue)
+        }
+    }
 
     let refreshControl = UIRefreshControl()
 
     var selectedProduct: Product?
 
-    func cleanAndReload() {
+    var searchController: UISearchController?
+
+    var isSearching: Bool = false {
+        didSet {
+            if !isSearching {
+                navigationItem.titleView = nil
+            }
+        }
+    }
+
+    func cleanAndReload(destructive: Bool = false) {
+        nextPage = 1
+
+        if destructive {
+            oldProductsCount = 0
+            totalPages = 1
+            products = []
+            collectionView?.reloadData()
+        }
+
         loadMoreProducts(page: 1) { (success, _) in
             self.refreshControl.endRefreshing()
             if success != nil {
@@ -32,7 +64,7 @@ public final class ProductListViewController: UIViewController {
         let pageToFetch = page ?? nextPage
         guard nextPage <= totalPages else { return }
 
-        client.getProducts(in: category, on: pageToFetch) { (success, failure) in
+        client.getProducts(in: category, sortedBy: sort, on: pageToFetch, searchText: searchText) { (success, failure) in
             completion?(success, failure)
             self.didLoadProducts(success: success, failure: failure)
         }
@@ -149,6 +181,8 @@ extension ProductListViewController {
 //MARK: - Segue
 extension ProductListViewController {
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ProductDetailsViewController" else { return }
+
         guard let injectable = segue.destination as? ProductInjectable else {
             logFailedPrecondition("Segue is broken or ViewController is non-conformant")
             return
