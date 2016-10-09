@@ -14,9 +14,16 @@ struct APIClient {
                      sortedBy sort: Sort = .salePriceDescending,
                      on page: Int = 1,
                      pageSize: Int = 30,
+                     searchText: String? = nil,
                      completion: @escaping ProductsCompletion) {
 
-        let searchString = "((categoryPath.id=\(category)))"
+
+        let clearSearch = searchText?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let shouldSearch = !clearSearch.isEmpty
+
+        let search = shouldSearch ? "(search=\(clearSearch))&" : ""
+        let category = "(categoryPath.id=\(category))"
+        let searchString = "(\(search)\(category))"
         let endpoint = baseURL + "products" + searchString
 
         let parameters = ["apiKey": key,
