@@ -133,8 +133,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cameras" id="pwn-sQ-cuf">
-                        <barButtonItem key="leftBarButtonItem" image="filter" id="Cex-dS-GHo"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="PzU-81-Kff"/>
+                        <barButtonItem key="leftBarButtonItem" image="sort" id="Cex-dS-GHo">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="PzU-81-Kff">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="f8a-wK-iC0" id="LeW-ef-iuh"/>
@@ -240,6 +244,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="filter" width="25" height="25"/>
+        <image name="sort" width="25" height="25"/>
     </resources>
 </document>
