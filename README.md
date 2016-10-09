@@ -39,6 +39,9 @@ Download the project and run on Xcode 8.0 (Swift 3.0). Even though I'm not a big
 - [ ] UI tests
 - [ ] Try ReLayout
 - [ ] Replace Storyboards with ViewCoding
+- [ ] Peek and Pop
+- [ ] CoreSpotlight
+- [ ] Use SwiftGen
 
 
 # Architecture
