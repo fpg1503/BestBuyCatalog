@@ -32,11 +32,11 @@ Download the project and run on Xcode 8.0 (Swift 3.0). Even though I'm not a big
 - [x] Autolayout
 - [x] Localization
 - [x] Zoom in onto images
+- [x] Share products on social networks
 
 
 ## TODO (in the future):
 
-- [ ] Share products on social networks
 - [ ] UI tests
 - [ ] Try ReLayout
 - [ ] Replace Storyboards with ViewCoding
