@@ -18,14 +18,33 @@ public final class ProductListViewController: UIViewController {
         }
     }
 
+    var searchText: String? {
+        didSet {
+            let isNewValue = searchText != oldValue
+            cleanAndReload(destructive: isNewValue)
+        }
+    }
+
     let refreshControl = UIRefreshControl()
 
     var selectedProduct: Product?
 
+    var searchController: UISearchController?
+
+    var isSearching: Bool = false {
+        didSet {
+            if !isSearching {
+                navigationItem.titleView = nil
+            }
+        }
+    }
+
     func cleanAndReload(destructive: Bool = false) {
+        nextPage = 1
+
         if destructive {
-            nextPage = 1
             oldProductsCount = 0
+            totalPages = 1
             products = []
             collectionView?.reloadData()
         }
@@ -45,7 +64,7 @@ public final class ProductListViewController: UIViewController {
         let pageToFetch = page ?? nextPage
         guard nextPage <= totalPages else { return }
 
-        client.getProducts(in: category, sortedBy: sort, on: pageToFetch) { (success, failure) in
+        client.getProducts(in: category, sortedBy: sort, on: pageToFetch, searchText: searchText) { (success, failure) in
             completion?(success, failure)
             self.didLoadProducts(success: success, failure: failure)
         }
@@ -162,6 +181,8 @@ extension ProductListViewController {
 //MARK: - Segue
 extension ProductListViewController {
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ProductDetailsViewController" else { return }
+
         guard let injectable = segue.destination as? ProductInjectable else {
             logFailedPrecondition("Segue is broken or ViewController is non-conformant")
             return
