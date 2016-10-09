@@ -11,12 +11,25 @@ public final class ProductListViewController: UIViewController {
     private var totalPages = 1
 
     var oldProductsCount = 0
+    var sort: Sort = .salePriceDescending {
+        didSet {
+            let isNewValue = sort != oldValue
+            cleanAndReload(destructive: isNewValue)
+        }
+    }
 
     let refreshControl = UIRefreshControl()
 
     var selectedProduct: Product?
 
-    func cleanAndReload() {
+    func cleanAndReload(destructive: Bool = false) {
+        if destructive {
+            nextPage = 1
+            oldProductsCount = 0
+            products = []
+            collectionView?.reloadData()
+        }
+
         loadMoreProducts(page: 1) { (success, _) in
             self.refreshControl.endRefreshing()
             if success != nil {
@@ -32,7 +45,7 @@ public final class ProductListViewController: UIViewController {
         let pageToFetch = page ?? nextPage
         guard nextPage <= totalPages else { return }
 
-        client.getProducts(in: category, on: pageToFetch) { (success, failure) in
+        client.getProducts(in: category, sortedBy: sort, on: pageToFetch) { (success, failure) in
             completion?(success, failure)
             self.didLoadProducts(success: success, failure: failure)
         }

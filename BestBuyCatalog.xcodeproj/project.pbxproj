@@ -33,6 +33,7 @@
 		A3938E321DA8749B00529F2F /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E311DA8749B00529F2F /* String+Localization.swift */; };
 		A3938E361DA87C3500529F2F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E351DA87C3500529F2F /* Response.swift */; };
 		A3938E381DA8886B00529F2F /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E371DA8886B00529F2F /* ProductDetailsViewController.swift */; };
+		A3938E3A1DAA8E1700529F2F /* ProductListViewController+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3938E391DAA8E1700529F2F /* ProductListViewController+Sort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		A3938E311DA8749B00529F2F /* String+Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		A3938E351DA87C3500529F2F /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		A3938E371DA8886B00529F2F /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		A3938E391DAA8E1700529F2F /* ProductListViewController+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProductListViewController+Sort.swift"; sourceTree = "<group>"; };
 		A89C899C1D14A514AC60F1B3 /* Pods_BestBuyCatalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBuyCatalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2874EA1A46360961A37FEA /* Pods-BestBuyCatalogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyCatalogTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestBuyCatalogTests/Pods-BestBuyCatalogTests.release.xcconfig"; sourceTree = "<group>"; };
 		B9078928105A81CF49B9F377 /* Pods-BestBuyCatalog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuyCatalog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BestBuyCatalog/Pods-BestBuyCatalog.debug.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				A3938E1A1DA5CB8C00529F2F /* ProductListViewController.swift */,
+				A3938E391DAA8E1700529F2F /* ProductListViewController+Sort.swift */,
 				A3938E371DA8886B00529F2F /* ProductDetailsViewController.swift */,
 			);
 			path = Controller;
@@ -444,6 +447,7 @@
 				A3938DE61DA30F3200529F2F /* AppDelegate.swift in Sources */,
 				A3938E361DA87C3500529F2F /* Response.swift in Sources */,
 				A3938E381DA8886B00529F2F /* ProductDetailsViewController.swift in Sources */,
+				A3938E3A1DAA8E1700529F2F /* ProductListViewController+Sort.swift in Sources */,
 				A3938E0D1DA31EA400529F2F /* Decodable.swift in Sources */,
 				A3938E321DA8749B00529F2F /* String+Localization.swift in Sources */,
 				A3938E281DA71E5000529F2F /* Array+SafeAccess.swift in Sources */,

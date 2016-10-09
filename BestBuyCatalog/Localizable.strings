@@ -4,3 +4,8 @@
 "ProductCell.Sale" = "Sale!";
 "ProductCell.Discount" = "%2$@ (reg. %1$@)";
 "ProductCell.Accessibility.OnSale" = " On sale: ";
+"Sorting.Title" = "Sort Items";
+"Sorting.Message" = "Select the desired sorting";
+"Sorting.PriceAscending.Title" = "Price - Ascending";
+"Sorting.PriceDescending.Title" = "Price - Descending";
+"Cancel" = "Cancel";
