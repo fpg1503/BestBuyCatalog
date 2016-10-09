@@ -31,11 +31,12 @@ Download the project and run on Xcode 8.0 (Swift 3.0). Even though I'm not a big
 - [x] Automatic paging
 - [x] Autolayout
 - [x] Localization
+- [x] Zoom in onto images
+
 
 ## TODO (in the future):
 
 - [ ] Share products on social networks
-- [ ] Zoom in onto images
 - [ ] UI tests
 - [ ] Try ReLayout
 - [ ] Replace Storyboards with ViewCoding
@@ -73,12 +74,14 @@ Currently there are only 2 test classes: `APIClientTests`, and `ProductDecodingT
 - `UIView+Border`: IBInspectable view borders
 - `String+Localization`: Simple String localization
 - `UIAccessibility+Inferred`: Ability to infer the `accessibilityLabel` of a view based on its contents and their order.
+- `UIViewController+ImageController`: Simple JTSImageViewController wrapper
 - `Logger`: A precondition failure logger. Aborts execution on debug.
 
 # Tools and frameworks
 
 - [Alamofire](https://github.com/Alamofire/Alamofire) - Networinkg
 - [AlamofireImage](https://github.com/Alamofire/AlamofireImage) - Image download/caching
+- [JTSImageViewController](https://github.com/jaredsinclair/JTSImageViewController) - Image viewer that does double tap to zoom, flick to dismiss, et cetera.
 - [Mockingjay](https://github.com/kylef/Mockingjay) Elegant HTTP request stubbing
 - [Reveal](http://revealapp.com) - UI Debugging
 - [Paw](https://paw.cloud) - API Testing
