@@ -1,7 +1,7 @@
 import UIKit
 
 public final class ProductDetailsViewController: UIViewController, ProductInjectable {
-    @IBOutlet private var imageView: UIImageView?
+    @IBOutlet var imageView: UIImageView?
     @IBOutlet private var productNameLabel: UILabel?
     @IBOutlet private var productDescriptionLabel: UILabel?
     @IBOutlet private var priceLabel: UILabel?
