@@ -14,6 +14,8 @@ public final class ProductListViewController: UIViewController {
 
     let refreshControl = UIRefreshControl()
 
+    var selectedProduct: Product?
+
     func cleanAndReload() {
         loadMoreProducts(page: 1) { (success, _) in
             self.refreshControl.endRefreshing()
@@ -91,6 +93,16 @@ extension ProductListViewController: UICollectionViewDataSource {
 //MARK: - UICollectionViewDelegateFlowLayout
 
 extension ProductListViewController: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let product = products.get(index: indexPath.item) else {
+            logFailedPrecondition("Internal inconsistency: selected item no longer exists")
+            return
+        }
+
+        selectedProduct = product
+        performSegue(withIdentifier: "ProductDetailsViewController", sender: self)
+    }
+
     public func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
@@ -130,5 +142,22 @@ extension ProductListViewController {
 
     @objc func pullToRefresh() {
         cleanAndReload()
+    }
+}
+
+//MARK: - Segue
+extension ProductListViewController {
+    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let injectable = segue.destination as? ProductInjectable else {
+            logFailedPrecondition("Segue is broken or ViewController is non-conformant")
+            return
+        }
+
+        guard let selectedProduct = selectedProduct else {
+            logFailedPrecondition("Internal inconsistency: product is misteriously nil")
+            return
+        }
+
+        injectable.inject(product: selectedProduct)
     }
 }

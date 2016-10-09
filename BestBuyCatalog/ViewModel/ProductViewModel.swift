@@ -4,6 +4,10 @@ protocol ProductViewModelConfigurable {
     func configure(with productViewModel: ProductViewModel)
 }
 
+protocol ProductInjectable {
+    func inject(product: Product)
+}
+
 protocol ProductViewModel {
     var onSale: Bool { get }
     var formattedDiscount: String { get }
