@@ -132,7 +132,10 @@
                             <constraint firstItem="f8a-wK-iC0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tea-9h-v0D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Cameras" id="pwn-sQ-cuf"/>
+                    <navigationItem key="navigationItem" title="Cameras" id="pwn-sQ-cuf">
+                        <barButtonItem key="leftBarButtonItem" image="filter" id="Cex-dS-GHo"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="PzU-81-Kff"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="f8a-wK-iC0" id="LeW-ef-iuh"/>
                         <segue destination="iKb-NA-MpX" kind="show" identifier="ProductDetailsViewController" id="gJa-sW-N8v"/>
@@ -236,4 +239,7 @@
             <point key="canvasLocation" x="57" y="84"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="filter" width="25" height="25"/>
+    </resources>
 </document>
