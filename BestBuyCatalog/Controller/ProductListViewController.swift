@@ -39,6 +39,7 @@ public final class ProductListViewController: UIViewController {
     }
 
     public override func viewDidLoad() {
+        super.viewDidLoad()
         addRefreshControl()
         client.getProducts(in: category, completion: didLoadProducts)
     }

@@ -154,51 +154,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBi-P0-1dp">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBi-P0-1dp">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oAT-ia-fcK">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oAT-ia-fcK">
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oAT-ia-fcK" secondAttribute="height" id="CvF-EE-16T"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YX-nf-2VG">
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YX-nf-2VG">
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByE-Bz-CGS">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByE-Bz-CGS">
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0EV-jS-kJY">
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ByE-Bz-CGS" secondAttribute="trailing" id="1TL-VL-KI3"/>
-                                    <constraint firstItem="7YX-nf-2VG" firstAttribute="width" secondItem="NBi-P0-1dp" secondAttribute="width" id="8b5-38-hbC"/>
-                                    <constraint firstAttribute="bottom" secondItem="ByE-Bz-CGS" secondAttribute="bottom" constant="231" id="BbE-hT-CIK"/>
                                     <constraint firstItem="7YX-nf-2VG" firstAttribute="top" secondItem="oAT-ia-fcK" secondAttribute="bottom" constant="43" id="DRZ-NN-ZDq"/>
-                                    <constraint firstItem="7YX-nf-2VG" firstAttribute="leading" secondItem="NBi-P0-1dp" secondAttribute="leading" id="Ms4-sN-hJO"/>
+                                    <constraint firstAttribute="trailing" secondItem="oAT-ia-fcK" secondAttribute="trailing" constant="16" id="FrV-9P-Kla"/>
+                                    <constraint firstAttribute="bottom" secondItem="0EV-jS-kJY" secondAttribute="bottom" constant="25" id="IGX-t4-grC"/>
                                     <constraint firstItem="oAT-ia-fcK" firstAttribute="top" secondItem="NBi-P0-1dp" secondAttribute="top" id="Rhq-Qe-Ufz"/>
-                                    <constraint firstItem="oAT-ia-fcK" firstAttribute="width" secondItem="NBi-P0-1dp" secondAttribute="width" id="cBy-EG-kTh"/>
-                                    <constraint firstAttribute="trailing" secondItem="oAT-ia-fcK" secondAttribute="trailing" id="dnJ-qJ-vk7"/>
-                                    <constraint firstItem="ByE-Bz-CGS" firstAttribute="width" secondItem="NBi-P0-1dp" secondAttribute="width" id="j1p-aH-qqP"/>
-                                    <constraint firstAttribute="trailing" secondItem="7YX-nf-2VG" secondAttribute="trailing" id="uzp-ZK-UIL"/>
+                                    <constraint firstItem="oAT-ia-fcK" firstAttribute="leading" secondItem="NBi-P0-1dp" secondAttribute="leading" constant="16" id="ez9-iX-vSO"/>
+                                    <constraint firstItem="0EV-jS-kJY" firstAttribute="top" secondItem="ByE-Bz-CGS" secondAttribute="bottom" constant="25" id="tfp-zE-sfP"/>
                                     <constraint firstItem="ByE-Bz-CGS" firstAttribute="top" secondItem="7YX-nf-2VG" secondAttribute="bottom" constant="25" id="vcP-SQ-dro"/>
-                                    <constraint firstItem="oAT-ia-fcK" firstAttribute="leading" secondItem="NBi-P0-1dp" secondAttribute="leading" id="wC4-Dq-Vuy"/>
-                                    <constraint firstItem="ByE-Bz-CGS" firstAttribute="leading" secondItem="NBi-P0-1dp" secondAttribute="leading" id="zBK-1z-w1l"/>
                                 </constraints>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="64" maxX="0.0" maxY="0.0"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ByE-Bz-CGS" firstAttribute="leading" secondItem="1IF-Qj-zAf" secondAttribute="leadingMargin" id="2jg-nT-Bki"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ByE-Bz-CGS" secondAttribute="trailing" id="7HE-z5-Je0"/>
                             <constraint firstItem="NBi-P0-1dp" firstAttribute="top" secondItem="1IF-Qj-zAf" secondAttribute="top" id="DQ4-TG-rra"/>
+                            <constraint firstItem="oAT-ia-fcK" firstAttribute="leading" secondItem="1IF-Qj-zAf" secondAttribute="leadingMargin" id="HkL-TS-xHp"/>
+                            <constraint firstItem="7YX-nf-2VG" firstAttribute="leading" secondItem="1IF-Qj-zAf" secondAttribute="leadingMargin" id="UT5-bj-KDy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0EV-jS-kJY" secondAttribute="trailing" id="WsB-8d-iS9"/>
+                            <constraint firstItem="0EV-jS-kJY" firstAttribute="leading" secondItem="1IF-Qj-zAf" secondAttribute="leadingMargin" id="bPS-be-dno"/>
                             <constraint firstAttribute="trailing" secondItem="NBi-P0-1dp" secondAttribute="trailing" id="iFE-hW-gkI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oAT-ia-fcK" secondAttribute="trailing" id="p49-I8-TDX"/>
                             <constraint firstItem="7bw-mz-gxP" firstAttribute="top" secondItem="NBi-P0-1dp" secondAttribute="bottom" id="p9t-g8-Z0w"/>
-                            <constraint firstItem="NBi-P0-1dp" firstAttribute="leading" secondItem="1IF-Qj-zAf" secondAttribute="leading" id="qIu-nQ-bUa"/>
+                            <constraint firstItem="NBi-P0-1dp" firstAttribute="leading" secondItem="1IF-Qj-zAf" secondAttribute="leading" id="wiZ-Kj-ncT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7YX-nf-2VG" secondAttribute="trailing" id="yDO-tD-zAv"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="imageView" destination="oAT-ia-fcK" id="XWm-Lk-4Dw"/>
+                        <outlet property="priceLabel" destination="0EV-jS-kJY" id="zHu-ek-frS"/>
+                        <outlet property="productDescriptionLabel" destination="ByE-Bz-CGS" id="gqh-Xb-Loa"/>
+                        <outlet property="productNameLabel" destination="7YX-nf-2VG" id="nfx-qU-Itm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M52-Rd-g4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -48,4 +48,11 @@ extension Product: ProductViewModel {
         let sale = onSale ? "ProductCell.Accessibility.OnSale".localized : " "
         return name + sale + formattedPrice
     }
+
+    var description: String {
+        if !longDescription.isEmpty {
+            return longDescription
+        }
+        return shortDescription
+    }
 }
